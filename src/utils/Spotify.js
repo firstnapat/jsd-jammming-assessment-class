@@ -1,5 +1,5 @@
 const clientId = '69683a16c61b413f86f638900c2834e0'
-const redirectUri = "http://127.0.0.1:5173/";
+const redirectUri = "https://Jammming-app-by-Napat.surge.sh";
 // let accessToken;
 let accessToken = undefined;
 
@@ -25,7 +25,7 @@ const Spotify = {
     }
   }, 
 
-  search(term) {
+  async search(term) {
     const accessToken = Spotify.getAccessToken();
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`,
     { 
