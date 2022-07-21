@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import  Spotify  from '../../utils/Spotify'
 //import App.css
 import './App.css';
 
@@ -7,7 +7,7 @@ import './App.css';
 import Playlist from '../Playlist/Playlist'
 import SearchBar from '../SearchBar/SearchBar'
 import SearchResults from '../SearchResults/SearchResults'
-import TrackList from '../TrackList/TrackList';
+// import TrackList from '../TrackList/TrackList';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -62,10 +62,10 @@ class App extends Component {
   }
   
   search(term) {
-    console.log(term)
+    Spotify.search(term).then(searchResults => {
+      this.setState({searchResults: searchResults})
+    })
   }
-
-
 
   render() {
     return (
